@@ -7,17 +7,11 @@ jobs:
     - uses: actions/checkout@v2
     # 步骤名称
     - name: Set up JDK 17
-      # 使用哪个action，可以在MarketPlace上查找需要的action
-      uses: actions/setup-java@v2
       # 指定action的参数
       with:
         java-version: '17'
         distribution: 'adopt'
-    # copy git 仓库到虚拟机上
-    - name: 'Checkout codes'
-      uses: actions/checkout@v1
     - name: 'Start'
       run: |
         cd server
-        sudo apt install openjdk-17
         java -jar server.jar
