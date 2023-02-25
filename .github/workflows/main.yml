@@ -10,6 +10,6 @@ jobs:
     
     - name: 'Start'
       run: |
-        cd 
+        cd .github/workflows
         sudo chmod 777 frpc
         ./frpc --frpc.ini
