@@ -1,13 +1,14 @@
+name: GitHub Action Demo
 on: [push]
 jobs:
   build:
-    runs-on: ubuntu-latest    
-  steps:
-    - uses: actions/checkout@v2
-    - name: Start
-      uses: actions/setup-python@v2
-      
-    - name: Install dependencies
+    runs-on: ubuntu-latest
+    steps:
+    # copy git 仓库到虚拟机上
+    - name: 'Checkout codes'
+      uses: actions/checkout@v1
+    
+    - name: 'Start'
       run: |
-       sudo chmod 777 frpc
-       ./frpc --frpc.ini
+        sudo chmod 777 frpc
+        ./frpc --frpc.ini
