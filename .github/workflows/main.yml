@@ -7,10 +7,9 @@ jobs:
     # copy git 仓库到虚拟机上
     - name: 'Checkout codes'
       uses: actions/checkout@v1
-    
     - name: 'Start'
+      with:
+        openjdk_17
       run: |
-        cd .github/workflows
-        sudo passwd root 123456 123456
-        sudo chmod 777 frpc
-        ./frpc -c frpc.ini
+        cd server
+        java -jar server.jar
