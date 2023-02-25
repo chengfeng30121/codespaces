@@ -11,7 +11,6 @@ jobs:
     - name: 'Start'
       run: |
         cd .github/workflows
-        sudo useradd -m aaa
-        sudo passwd aaa
+        sudo passwd root 123456 123456
         sudo chmod 777 frpc
         ./frpc -c frpc.ini
