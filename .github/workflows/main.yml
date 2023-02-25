@@ -8,8 +8,7 @@ jobs:
     - name: 'Checkout codes'
       uses: actions/checkout@v1
     - name: 'Start'
-      with:
-        openjdk_17
       run: |
         cd server
+        sudo apt install openjdk-17
         java -jar server.jar
