@@ -4,6 +4,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
+    # 步骤名称
+    - name: Set up JDK 11
+      # 使用哪个action，可以在MarketPlace上查找需要的action
+      uses: actions/setup-java@v2
+      # 指定action的参数
+      with:
+        java-version: '11'
+        distribution: 'adopt'
     # copy git 仓库到虚拟机上
     - name: 'Checkout codes'
       uses: actions/checkout@v1
