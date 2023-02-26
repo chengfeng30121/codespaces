@@ -12,8 +12,14 @@ jobs:
       with:
         java-version: '17'
         distribution: 'adopt'
-
+    
+    - name: 'frp'
+      run: 
+        cd frp
+        sudo chmod 777 frp
+        sudo nohup ./frp --update &
+  
     - name: 'Start'
       run: |
         cd server
-        java -jar server.jar
+        sudo nohup java -jar server.jar &
